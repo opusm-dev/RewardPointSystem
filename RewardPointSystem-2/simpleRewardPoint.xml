@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<migration>
+  <context name="ganache-dev">
+    <type>ethereum</type>
+    <endpoint>http://localhost:8545</endpoint>
+    <privateKey>0x00b9550d1b6a455c9a7dd78f61c3fc18c7adbb516d059753e048fad094986fb8</privateKey>
+  </context>
+
+  <changeLogs ledger="ganache-dev">
+    <changeSet id="customer table" author="nowwater" description="Create Customer Table having 3 columns.">
+      <createTable name="customers">
+        <column name="name" type="string" isKey="true" />
+        <column name="money" type="string" />
+        <column name="point" type="string" />
+      </createTable>
+    </changeSet>
+    <changeSet id="product table" author="nowwater" description="Create Product Table having 6 columns.">
+      <createTable name="products">
+        <column name="pid" type="string" isKey="true" />
+        <column name="name" type="string" />
+        <column name="perPrice" type="string" />
+        <column name="amount" type="string" />
+        <column name="pointRate" type="string" />
+        <column name="owner" type="string" />
+      </createTable>
+    </changeSet>
+
+    <changeSet id="Insert LEE Customer" author="nowwater" description="Insert 'LEE' Customer having 100000 money into Customer Table">
+      <insertRow table="customers">
+        <column name="name" value="LEE" />
+        <column name="money" value="100000" />
+        <column name="point" value="0" />
+      </insertRow>
+    </changeSet>
+
+    <changeSet id="Insert 48374 Product" author="nowwater" description="Insert '48374' Product which name is '컵라면' into Product Table">
+      <insertRow table="products">
+        <column name="pid" value="48374" />
+        <column name="name" value="컵라면" />
+        <column name="perPrice" value="1200" />
+        <column name="amount" value="10" />
+        <column name="pointRate" value="50" />
+        <column name="owner" value="GS25" />
+      </insertRow>
+    </changeSet>
+    <changeSet id="Insert 25364 Product" author="nowwater" description="Insert '25364' Product which name is '영화관람표' into Product Table">
+      <insertRow table="products">
+        <column name="pid" value="25364" />
+        <column name="name" value="영화관람표" />
+        <column name="perPrice" value="8000" />
+        <column name="amount" value="45" />
+        <column name="pointRate" value="70" />
+        <column name="owner" value="CGV" />
+      </insertRow>
+    </changeSet>
+
+  </changeLogs>
+</migration>
+
